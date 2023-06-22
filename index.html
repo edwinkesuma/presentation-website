@@ -22,7 +22,7 @@
         <h1>Page Two</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum numquam cupiditate cumque, iure harum nulla eligendi excepturi, voluptas optio autem dicta distinctio soluta odio consequatur, amet officiis quo ab quis! Nostrum architecto recusandae magnam praesentium nesciunt reprehenderit asperiores in. Doloribus.</p>
         <div>
-            <a href="#page-1" class="btn-dark">Prev Page <i class="fas fa-arrow-circle-up"></i></a>
+            <a href="#page-1" class="btn btn-dark">Prev Page <i class="fas fa-arrow-circle-up"></i></a>
             <a href="#page-3" class="btn">Next Page <i class="fas fa-arrow-circle-down"></i></a>
         </div>
     </section>
@@ -32,7 +32,7 @@
         <h1>Page Three</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum numquam cupiditate cumque, iure harum nulla eligendi excepturi, voluptas optio autem dicta distinctio soluta odio consequatur, amet officiis quo ab quis! Nostrum architecto recusandae magnam praesentium nesciunt reprehenderit asperiores in. Doloribus.</p>
         <div>
-            <a href="#page-2" class="btn-dark">Prev Page <i class="fas fa-arrow-circle-up"></i></a>
+            <a href="#page-2" class="btn btn-dark">Prev Page <i class="fas fa-arrow-circle-up"></i></a>
             <a href="#page-4" class="btn">Next Page <i class="fas fa-arrow-circle-down"></i></a>
         </div>
     </section>
@@ -45,5 +45,25 @@
             <a href="#page-3" class="btn">Next Page <i class="fas fa-arrow-circle-up"></i></a>
         </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <script>
+        //Smooth Scrolling
+        $('#navbar a, .btn').on('click', function (e) {
+            if (this.hash !== '') {
+                e.preventDefault();
+
+                const hash = this.hash;
+
+                $('html, body').animate(
+                    {
+                        scrollTop: $(hash).offset().top - 0,
+                    },
+                    800
+                );
+            }
+        });
+    </script>
 </body>
 </html>
